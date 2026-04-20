@@ -22,13 +22,13 @@ services:
       MONGO_DB_URI: 
         value: mongodb+srv://pusers:nycreation@nycreation.pd4klp1.mongodb.net/?retryWrites=true&w=majority&appName=NYCREATION
       OWNER_ID:
-        value: 7574330905
+        value: 8042205941
       OWNER_USERNAME:
-        value: WTF_WhyMeeh
+        value: SlayWithRose
       BOT_USERNAME:
-        value: ShrutixMusicBot
+        value: BillieMusicBot
       UPSTREAM_REPO:
-        value: https://github.com/NoxxOP/ShrutiMusic
+        value: https://github.com/arclx724/final
       STRING_SESSION:
         sync: false
       GIT_TOKEN:
@@ -40,15 +40,15 @@ services:
       LOG_GROUP_ID:
         value: -1002321189618
       SUPPORT_GROUP:
-        value: https://t.me/ShrutiBotsupport
+        value: https://t.me/SlayWithRose
       SUPPORT_CHANNEL:
-        value: https://t.me/ShrutiBots
+        value: https://t.me/SlayWithRose
       INSTAGRAM:
-        value: https://instagram.com/yaduwanshi_nand
+        value: https://t.me/SlayWithRose
       YOUTUBE:
-        value: https://youtube.com/@NandEditz
+        value: https://t.me/SlayWithRose
       GITHUB:
-        value: https://github.com/NoxxOP
+        value: https://github.com/arclx724/final
       DONATE:
         value: https://t.me/ShrutiBots/91
       START_IMG_URL:
