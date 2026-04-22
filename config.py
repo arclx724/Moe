@@ -13,7 +13,16 @@ OWNER_USERNAME = os.getenv("OWNER_USERNAME", "SlayWithRose")
 BOT_USERNAME = os.getenv("BOT_USERNAME", "BillieMusicBot")
 
 MONGO_DB_URI = os.getenv("MONGO_DB_URI", None)
-LOG_GROUP_ID = int(os.getenv("LOG_GROUP_ID", None))
+
+_log_group_raw = os.getenv("LOG_GROUP_ID", None)
+if _log_group_raw:
+    try:
+        LOG_GROUP_ID = int(_log_group_raw)
+    except ValueError:
+        LOG_GROUP_ID = _log_group_raw  # username string as-is
+else:
+    LOG_GROUP_ID = None
+
 HEROKU_APP_NAME = os.getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = os.getenv("HEROKU_API_KEY")
 
@@ -113,4 +122,4 @@ if SUPPORT_GROUP:
     if not re.match(r"(?:http|https)://", SUPPORT_GROUP):
         raise SystemExit(
             "[ERROR] - SUPPORT_GROUP URL is invalid. It must start with https://"
-    )
+        )
