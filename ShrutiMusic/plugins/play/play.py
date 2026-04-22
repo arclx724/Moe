@@ -362,7 +362,7 @@ async def play_commnd(
     if str(playmode) == "Direct":
         if not plist_type:
             if details["duration_min"]:
-                duration_sec = time_to_seconds(details["duration_min"])
+                duration_sec = time_to_seconds(details["duration_min"]) if details.get("duration_min") not in [None, "N/A"] else 0
                 if duration_sec > config.DURATION_LIMIT:
                     return await mystic.edit_text(
                         _["play_6"].format(config.DURATION_LIMIT_MIN, app.mention)
