@@ -41,6 +41,7 @@ class Nand(Client):
 
         if config.LOG_GROUP_ID:
             try:
+                await self.get_chat(config.LOG_GROUP_ID)
                 await self.send_photo(
                     config.LOG_GROUP_ID,
                     photo=config.START_IMG_URL,
