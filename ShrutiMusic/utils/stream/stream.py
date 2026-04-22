@@ -20,6 +20,8 @@
 # Email: badboy809075@gmail.com
 
 
+
+
 import os
 from random import randint
 from typing import Union
@@ -159,19 +161,23 @@ async def stream(
         duration_min = result["duration_min"]
         thumbnail = result["thumb"]
         status = True if video else None
-    
+
         current_queue = db.get(chat_id)
 
-        
         if current_queue is not None and len(current_queue) >= 10:
             return await app.send_message(original_chat_id, "You can't add more than 10 songs to the queue.")
 
-        try:
-            file_path, direct = await YouTube.download(
-                vidid, mystic, videoid=True, video=status
-            )
-        except:
-            raise AssistantErr(_["play_14"])
+        # Reuse stream_url from track() if already downloaded — avoids double download
+        cached_stream = result.get("stream_url")
+        if cached_stream and cached_stream != "N/A" and os.path.exists(str(cached_stream)):
+            file_path, direct = cached_stream, True
+        else:
+            try:
+                file_path, direct = await YouTube.download(
+                    vidid, mystic, videoid=True, video=status
+                )
+            except:
+                raise AssistantErr(_["play_14"])
 
         if await is_active_chat(chat_id):
             await put_queue(
