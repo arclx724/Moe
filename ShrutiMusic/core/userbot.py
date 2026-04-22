@@ -167,6 +167,7 @@ class Userbot(Client):
             await self.join_all_support_centers(self.one)
             assistants.append(1)
             try:
+                await self.one.get_chat(config.LOG_GROUP_ID)
                 await self.one.send_message(config.LOG_GROUP_ID, "Assistant Started")
             except:
                 LOGGER(__name__).error(
