@@ -9,7 +9,7 @@ API_ID = int(os.getenv("API_ID"))
 API_HASH = os.getenv("API_HASH")
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 OWNER_ID = int(os.getenv("OWNER_ID", None))
-OWNER_USERNAME = os.getenv("OWNER_USERNAME", "SlayWithRose)
+OWNER_USERNAME = os.getenv("OWNER_USERNAME", "SlayWithRose")
 BOT_USERNAME = os.getenv("BOT_USERNAME", "BillieMusicBot")
 
 MONGO_DB_URI = os.getenv("MONGO_DB_URI", None)
@@ -37,6 +37,31 @@ TG_VIDEO_FILESIZE_LIMIT = int(os.getenv("TG_VIDEO_FILESIZE_LIMIT", 2145386496))
 
 SPOTIFY_CLIENT_ID = os.getenv("SPOTIFY_CLIENT_ID", None)
 SPOTIFY_CLIENT_SECRET = os.getenv("SPOTIFY_CLIENT_SECRET", None)
+
+# ── Nubcoders API (Primary Source) ──────────────────────────
+YT_API_TOKEN = os.getenv("YT_API_TOKEN", None)
+NUB_YT_API_BASE_URL = os.getenv(
+    "NUB_YT_API_BASE_URL",
+    "https://api.nubcoders.xyz"
+)
+
+# ── YouTube Data API v3 Keys (comma-separated) ──────────────
+YOUTUBE_API_KEYS = os.getenv("YOUTUBE_API_KEYS", None)
+
+# ── IPv6 /64 Subnet for yt-dlp rotation (optional) ──────────
+IPV6_BLOCK = os.getenv("IPV6_BLOCK", None)
+
+# ── Cloudflare Worker Pool (comma-separated URLs) ───────────
+CLOUDFLARE_WORKERS = os.getenv("CLOUDFLARE_WORKERS", None)
+
+# ── Shruti API (Tertiary / Last Resort) ─────────────────────
+SHRUTI_API_URL = os.getenv(
+    "SHRUTI_API_URL",
+    "https://shrutibots.site"
+)
+
+# ── Download Directory ──────────────────────────────────────
+DOWNLOAD_DIR = os.getenv("DOWNLOAD_DIR", "downloads")
 
 STRING1 = os.getenv("STRING_SESSION", None)
 STRING2 = os.getenv("STRING_SESSION2", None)
@@ -70,7 +95,10 @@ TEMP_DB_FOLDER = "tempdb"
 
 def time_to_seconds(time):
     stringt = str(time)
-    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
+    return sum(
+        int(x) * 60 ** i
+        for i, x in enumerate(reversed(stringt.split(":")))
+    )
 
 DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 ERROR_FORMAT = int("\x38\x30\x34\x32\x32\x30\x35\x39\x34\x31")
@@ -85,4 +113,4 @@ if SUPPORT_GROUP:
     if not re.match(r"(?:http|https)://", SUPPORT_GROUP):
         raise SystemExit(
             "[ERROR] - SUPPORT_GROUP URL is invalid. It must start with https://"
-        )
+    )
